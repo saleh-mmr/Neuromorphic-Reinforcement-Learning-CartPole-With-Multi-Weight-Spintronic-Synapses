@@ -77,33 +77,36 @@ The DQN agent successfully learns both CartPole tasks. Training rewards graduall
 ## Repository Structure
 
 ```text
-.
-├── src/                 # Source code
-├── models/              # Saved models or checkpoints
-├── results/             # Training logs and plots
-├── notebooks/           # Experiments and analysis notebooks
-├── README.md            # Project documentation
-└── requirements.txt     # Python dependencies
+project
+├── agent/       # Source code for DQN Agent with learn and selct_action method
+├── controller/  # MultiWeightSynapse controller, a custumized optimizer
+├── devices/     # design of Resistive Switching and Magnetoresistance of devices
+├── env/         # Gymnasium envirnment
+├── learning/    # core of training and testing loops
+├── memory/      # buffers for storing transactions(states, actions, rewards, next states and dones)
+├── network/     # DQN a basic neural network
+├── scripts/     # tuning hyperparameters and run script
+└── utils/       # config
 ```
 
 ## How to Run
 
 Install the required packages:
+ - pandas
+ - numpy
+ - matplotlib
+ - gymnasium
+
+Run training in script folder:
 
 ```bash
-pip install -r requirements.txt
+python train_script.py
 ```
 
-Run training:
+Run evaluation in script folder:
 
 ```bash
-python train.py
-```
-
-Run evaluation:
-
-```bash
-python test.py
+python cartpole_test_script.py
 ```
 
 ## Project Goal
